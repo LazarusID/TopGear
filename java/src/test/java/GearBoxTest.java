@@ -30,15 +30,81 @@ public class GearBoxTest {
 
     @Test
     public void getCurrentGear_startingFromNeutralAndDoItOverTwoThousand_returnsFirst() {
-        box.doit(2001);
+        shiftUp();
         assertThat(box.getCurrentGear(), is(Gear.FIRST));
     }
 
     @Test
     public void getCurrentGear_afterShiftUpTwice_returnsSecond() {
-        box.doit(2001);
-        box.doit(2001);
+        shiftUp();
+        shiftUp();
         assertThat(box.getCurrentGear(), is(Gear.SECOND));
+    }
+
+    @Test
+    public void getCurrentGear_afterShiftUpThreeTimes_returnsThird() {
+        shiftUp();
+        shiftUp();
+        shiftUp();
+        assertThat(box.getCurrentGear(), is(Gear.THIRD));
+    }
+
+    @Test
+    public void getCurrentGear_afterShiftUpFourTimes_returnsFourth() {
+        shiftUp();
+        shiftUp();
+        shiftUp();
+        shiftUp();
+        assertThat(box.getCurrentGear(), is(Gear.FOURTH));
+    }
+
+    @Test
+    public void getCurrentGear_afterShiftUpFiveTimes_returnsFifth() {
+        shiftUp();
+        shiftUp();
+        shiftUp();
+        shiftUp();
+        shiftUp();;
+        assertThat(box.getCurrentGear(), is(Gear.FIFTH));
+    }
+
+    @Test
+    public void getCurrentGear_afterShiftUpSixTimes_returnsSixth() {
+        shiftUp();
+        shiftUp();
+        shiftUp();
+        shiftUp();
+        shiftUp();
+        shiftUp();
+        assertThat(box.getCurrentGear(), is(Gear.SIXTH));
+    }
+
+    @Test
+    public void getCurrentGear_afterShiftUpSevenTimes_returnsSixth() {
+        shiftUp();
+        shiftUp();
+        shiftUp();
+        shiftUp();
+        shiftUp();
+        shiftUp();
+        shiftUp();
+        assertThat(box.getCurrentGear(), is(Gear.SIXTH));
+    }
+
+    @Test
+    public void getCurrentGear_afterShiftUpTwiceAndShiftDown_returnsFirst() {
+        shiftUp();
+        shiftUp();
+        shiftDown();
+        assertThat(box.getCurrentGear(), is(Gear.FIRST));
+    }
+
+    private void shiftUp() {
+        box.doit(2001);
+    }
+
+    private void shiftDown() {
+        box.doit(200);
     }
 
 }

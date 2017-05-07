@@ -31,6 +31,14 @@ public class GearBox {
                 return Gear.FIRST;
             case 2:
                 return Gear.SECOND;
+            case 3:
+                return Gear.THIRD;
+            case 4:
+                return Gear.FOURTH;
+            case 5:
+                return Gear.FIFTH;
+            case 6:
+                return Gear.SIXTH;
             default:
                 return Gear.NEUTRAL;
         }
