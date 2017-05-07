@@ -99,6 +99,13 @@ public class GearBoxTest {
         assertThat(box.getCurrentGear(), is(Gear.FIRST));
     }
 
+    @Test
+    public void getCurrentGear_afterShiftUpAndShiftDown_returnsFirst() {
+        shiftUp();
+        shiftDown();
+        assertThat(box.getCurrentGear(), is(Gear.FIRST));
+    }
+
     private void shiftUp() {
         box.doit(2001);
     }
