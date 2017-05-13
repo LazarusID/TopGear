@@ -7,6 +7,8 @@ class GearBox {
 		GearBox();
 		void doit(int i);
 
+    int currentGear(void);
+
 	private:
 		int s;
 		int e;
